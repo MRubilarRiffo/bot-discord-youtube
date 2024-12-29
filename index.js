@@ -1,5 +1,5 @@
-const Config = require("./Config.json");
-const pkg = require("./package.json");
+const Config = require('./Config.json');
+const pkg = require('./package.json');
 const { Client, GatewayIntentBits } = require('discord.js');
 const {
     joinVoiceChannel,
@@ -54,7 +54,8 @@ function playNext(guildId) {
     const ytdlProcess = youtubedl.exec(nextUrl, {
         format: 'bestaudio',
         noPlaylist: true,
-        output: '-'
+        output: '-',
+        cookies: './cookies.txt'
     });
 
     // Registro opcional
